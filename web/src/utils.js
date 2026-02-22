@@ -122,7 +122,7 @@ export class InvoiceGenerator {
 export class WhatsAppIntegration {
     static getWhatsAppLink(data) {
         const message = this.formatMessage(data);
-        const phoneNumber = '919876543210'; // Add your WhatsApp number here
+        const phoneNumber = '9177188 38619'; // Add your WhatsApp number here
         return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     }
     static formatMessage(data) {
