@@ -1,0 +1,11 @@
+{
+  "name": "@mumbai-jaan/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and types for Mumbai Jan Biryani web and mobile apps",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

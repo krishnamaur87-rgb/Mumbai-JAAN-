@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Mumbai Jan Biryani",
+    "slug": "mumbai-jaan-biryani",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a1a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTabletMode": true,
+      "bundleIdentifier": "com.mumbaijaanbiryani.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a1a"
+      },
+      "package": "com.mumbaijaanbiryani.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "mumbaijaanbiryani",
+    "extra": {
+      "eas": {
+        "projectId": "29533c5e-245c-413c-b615-3e007b769581"
+      }
+    }
+  }
+}
