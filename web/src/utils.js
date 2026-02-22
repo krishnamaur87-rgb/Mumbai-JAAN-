@@ -105,9 +105,13 @@ export class InvoiceGenerator {
         yPosition += 5;
         doc.setFont(undefined, 'bold');
         doc.setFillColor(255, 159, 28);
-        doc.rect(100, yPosition, 90, 10, 'F');
+        const rectWidth = 90;
+        const rightMargin = 20;
+        const rectX = pageWidth - rightMargin - rectWidth;
+        const textX = pageWidth - rightMargin;
+        doc.rect(rectX, yPosition, rectWidth, 10, 'F');
         doc.setTextColor(26, 26, 26);
-        doc.text(`Total: ₹${data.total.toFixed(2)}`, 180, yPosition + 7, { align: 'right' });
+        doc.text(`Total: ₹${data.total.toFixed(2)}`, textX, yPosition + 7, { align: 'right' });
         // Footer
         doc.setFont(undefined, 'italic');
         doc.setTextColor(100, 100, 100);
