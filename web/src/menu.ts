@@ -117,14 +117,14 @@ function renderNavbar(): void {
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-2">
             <span class="text-2xl font-bold text-primary">🍛</span>
-            <a href="/" class="text-xl font-bold text-light hover:text-primary transition">
+            <a href="/index.html" class="text-xl font-bold text-light hover:text-primary transition">
               Mumbai Jan Biryani
             </a>
           </div>
           <div class="flex items-center space-x-6">
-            <a href="/" class="text-light hover:text-primary transition font-medium">Home</a>
-            <a href="/menu" class="text-primary font-bold">Menu</a>
-            <a href="/dashboard" class="text-light hover:text-primary transition font-medium">Admin</a>
+            <a href="/index.html" class="text-light hover:text-primary transition font-medium">Home</a>
+            <a href="/menu.html" class="text-primary font-bold">Menu</a>
+            <a href="/dashboard.html" class="text-light hover:text-primary transition font-medium">Admin</a>
           </div>
         </div>
       </div>
