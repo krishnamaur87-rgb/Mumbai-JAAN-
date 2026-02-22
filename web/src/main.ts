@@ -45,14 +45,14 @@ function renderNavbar(): void {
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-2">
             <span class="text-2xl font-bold text-primary">🍛</span>
-            <a href="/index.html" class="text-xl font-bold text-light hover:text-primary transition">
+            <a href="/" class="text-xl font-bold text-light hover:text-primary transition">
               Mumbai Jan Biryani
             </a>
           </div>
           <div class="flex items-center space-x-6">
-            <a href="/index.html" class="text-light hover:text-primary transition font-medium">Home</a>
-            <a href="/menu.html" class="text-light hover:text-primary transition font-medium">Menu</a>
-            <a href="/dashboard.html" class="text-light hover:text-primary transition font-medium">Admin</a>
+            <a href="/" class="text-light hover:text-primary transition font-medium">Home</a>
+            <a href="/menu" class="text-light hover:text-primary transition font-medium">Menu</a>
+            <a href="/dashboard" class="text-light hover:text-primary transition font-medium">Admin</a>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ function renderHeroSection(): void {
           Experience the authentic taste of royal Mughlai cuisine, crafted with premium ingredients and traditional recipes.
         </p>
         <div class="flex justify-center gap-4 flex-wrap">
-          <a href="/menu.html" class="bg-primary text-dark font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">
+          <a href="/menu" class="bg-primary text-dark font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">
             Order Now
           </a>
           <button id="exploreBtn" class="border-2 border-primary text-primary font-bold py-3 px-8 rounded-lg hover:bg-primary hover:text-dark transition">
@@ -108,7 +108,7 @@ function renderFeaturedItems(): void {
         <p class="text-gray-300 text-sm mb-4">${item.description}</p>
         <div class="flex justify-between items-center">
           <span class="text-2xl font-bold text-primary">₹${item.price}</span>
-            <a href="/menu.html" class="bg-primary text-dark font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            <a href="/menu" class="bg-primary text-dark font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
             Add to Cart
           </a>
         </div>
@@ -146,9 +146,9 @@ function renderFooter(): void {
           <div>
             <h3 class="text-lg font-bold text-primary mb-4">Quick Links</h3>
             <ul class="text-gray-400 space-y-2">
-                <li><a href="/index.html" class="hover:text-primary transition">Home</a></li>
-                <li><a href="/menu.html" class="hover:text-primary transition">Menu</a></li>
-                <li><a href="/dashboard.html" class="hover:text-primary transition">Admin</a></li>
+                <li><a href="/" class="hover:text-primary transition">Home</a></li>
+                <li><a href="/menu" class="hover:text-primary transition">Menu</a></li>
+                <li><a href="/dashboard" class="hover:text-primary transition">Admin</a></li>
             </ul>
           </div>
           <div>
