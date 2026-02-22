@@ -154,7 +154,7 @@ function renderFooter(): void {
           <div>
             <h3 class="text-lg font-bold text-primary mb-4">Contact</h3>
             <p class="text-gray-400">📍 Mumbai, India</p>
-            <p class="text-gray-400">📞 +91 98765 43210</p>
+            <p class="text-gray-400">📞 +91 77188 38619</p>
             <p class="text-gray-400">✉️ order@mumbaijaan.com</p>
           </div>
         </div>
