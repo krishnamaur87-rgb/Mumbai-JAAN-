@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   qtyButton: {
-    width: 32,
-    height: 32,
-    borderRadius: 6,
+    width: 28,
+    height: 28,
+    borderRadius: 5,
     backgroundColor: '#ff9f1c',
     justifyContent: 'center',
     alignItems: 'center',
@@ -173,9 +173,11 @@ const styles = StyleSheet.create({
   },
   checkoutButton: {
     backgroundColor: '#ff9f1c',
-    paddingVertical: 14,
+    paddingVertical: 10,
     borderRadius: 8,
     alignItems: 'center',
+    minWidth: 200,
+    alignSelf: 'center',
   },
   checkoutButtonText: {
     color: '#1a1a1a',

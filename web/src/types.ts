@@ -12,12 +12,13 @@ export interface CartItem extends MenuItem {
 }
 
 export interface Order {
-  id: string;
+  id?: string;
+  orderNumber: string;
   items: CartItem[];
   total: number;
   userName: string;
   orderType: 'Dine-in' | 'Delivery';
-  timestamp: Date;
+  timestamp: Date | string;
 }
 
 export interface Cart {

@@ -4,6 +4,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MENU_ITEMS } from '@mumbai-jaan/shared';
 import { useCart } from '../context/CartContext';
 
+const PLACEHOLDER_IMAGE = 'https://via.placeholder.com/500x300?text=Image+Unavailable';
+
 const MenuScreen = ({ navigation }: any) => {
   const insets = useSafeAreaInsets();
   const { addItem } = useCart();
@@ -17,28 +19,40 @@ const MenuScreen = ({ navigation }: any) => {
     return matchesSearch && matchesCategory;
   });
 
-  const renderItem = ({ item }: { item: typeof MENU_ITEMS[0] }) => (
-    <View style={styles.itemCard}>
-      <Image source={{ uri: item.image }} style={styles.itemImage} />
-      <View style={styles.itemContent}>
-        <Text style={styles.itemCategory}>{item.category}</Text>
-        <Text style={styles.itemName}>{item.name}</Text>
-        <Text style={styles.itemDescription} numberOfLines={2}>
-          {item.description}
-        </Text>
-        <View style={styles.itemFooter}>
-          <Text style={styles.itemPrice}>₹{item.price}</Text>
-          <TouchableOpacity
-            style={styles.addButton}
-            onPress={() => {
-              addItem(item);
-            }}
-          >
-            <Text style={styles.addButtonText}>Add</Text>
-          </TouchableOpacity>
+  // extract item card into its own component so we can manage image error state
+  const MenuItemCell = ({ item }: { item: typeof MENU_ITEMS[0] }) => {
+    const [uri, setUri] = useState(item.image);
+
+    return (
+      <View style={styles.itemCard}>
+        <Image
+          source={{ uri }}
+          style={styles.itemImage}
+          resizeMode="cover"
+          onError={() => setUri(PLACEHOLDER_IMAGE)}
+        />
+        <View style={styles.itemContent}>
+          <Text style={styles.itemCategory}>{item.category}</Text>
+          <Text style={styles.itemName}>{item.name}</Text>
+          <Text style={styles.itemDescription} numberOfLines={2}>
+            {item.description}
+          </Text>
+          <View style={styles.itemFooter}>
+            <Text style={styles.itemPrice}>₹{item.price}</Text>
+            <TouchableOpacity
+              style={styles.addButton}
+              onPress={() => addItem(item)}
+            >
+              <Text style={styles.addButtonText}>Add</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    );
+  };
+
+  const renderItem = ({ item }: { item: typeof MENU_ITEMS[0] }) => (
+    <MenuItemCell item={item} />
   );
 
   return (
@@ -179,8 +193,8 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: '#ff9f1c',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
     borderRadius: 6,
   },
   addButtonText: {

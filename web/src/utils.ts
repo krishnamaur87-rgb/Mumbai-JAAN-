@@ -153,6 +153,34 @@ export class WhatsAppIntegration {
       .map(item => `• ${item.name} x${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`)
       .join('\n');
 
-    return `Hi, I would like to place an order at Mumbai Jan Biryani!\n\n📋 *Order Details*\nOrder Number: ${data.orderNumber}\nName: ${data.userName}\nOrder Type: ${data.orderType}\n\n🍛 *Items Ordered*\n${itemsList}\n\n💰 *Total: ₹${data.total.toFixed(2)}*\n\nPlease confirm my order. Thank you!`;
+    return `Hi, I would like to place an order at Mumbai Jan Biryani!
+
+📋 *Order Details*
+Order Number: ${data.orderNumber}
+Name: ${data.userName}
+Order Type: ${data.orderType}
+
+🍛 *Items Ordered*
+${itemsList}
+
+💰 *Total: ₹${data.total.toFixed(2)}*
+
+Please confirm my order. Thank you!`;
+  }
+}
+
+// simple order storage for admin panel
+const ORDERS_STORAGE_KEY = 'mumbai_jaan_orders';
+
+export class OrderManager {
+  static saveOrder(order: Order): void {
+    const existing = this.getOrders();
+    existing.push(order);
+    localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(existing));
+  }
+
+  static getOrders(): Order[] {
+    const stored = localStorage.getItem(ORDERS_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
   }
 }
